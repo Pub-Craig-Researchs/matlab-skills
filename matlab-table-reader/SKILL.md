@@ -92,6 +92,9 @@ data.Date = datetime(data.Date, 'InputFormat', 'dd-MMM-yyyy', 'Locale', 'en_US')
 opts = detectImportOptions('file.csv');
 opts = setvaropts(opts, 'DateColumn', 'InputFormat', 'yyyy-MM-dd');
 data = readtable('file.csv', opts);
+
+% Convert 'YYYYMM' format (e.g., '1998M01') to datetime
+data.Date = datetime(data.Date, 'InputFormat', 'yyyy''M''MM');
 ```
 
 ## Data Analysis
@@ -162,6 +165,28 @@ value = data.('Variable Name');
 
 % Rename variables
 data.Properties.VariableNames{'OldName'} = 'NewName';
+```
+
+### 4. Convert Character Data to Numeric
+
+```matlab
+% Convert cell array of strings to numeric
+% Example: data.Value is cell array like {'100.5'; '200.3'; '...'}
+numeric_values = str2double(data.Value);
+
+% Handle special characters (e.g., '...' as missing data)
+% Replace non-numeric strings with NaN
+for i = 1:length(data.Value)
+    if ischar(data.Value{i}) && ~isstrprop(data.Value{i}, 'digit')
+        data.Value{i} = NaN;
+    else
+        data.Value{i} = str2double(data.Value{i});
+    end
+end
+data.Value = cell2mat(data.Value);
+
+% Alternative: Using cellfun for conversion
+data.Value = cellfun(@(x) str2double(x), data.Value);
 ```
 
 ## Common Pitfalls

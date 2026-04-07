@@ -1,0 +1,4 @@
+interface:
+  display_name: "Detect Python Path"
+  short_description: "Get Python path from MATLAB pyenv"
+  default_prompt: "Use $detect-python-path to find the Python executable path before running any terminal Python command"

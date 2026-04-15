@@ -1,0 +1,4 @@
+interface:
+  display_name: "MATLAB Doc Injector"
+  short_description: "Query local MATLAB documentation and inject Markdown into Agent context"
+  default_prompt: "Query MATLAB function documentation using local MDI tool"

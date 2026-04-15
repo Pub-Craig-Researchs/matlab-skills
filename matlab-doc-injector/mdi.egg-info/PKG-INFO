@@ -1,0 +1,6 @@
+Metadata-Version: 2.4
+Name: mdi
+Version: 2.0.0
+Summary: MATLAB Doc Injector - 面向 Agent 编程的零延迟本地文档注入引擎
+Requires-Python: >=3.12
+Requires-Dist: markitdown>=0.1.0

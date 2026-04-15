@@ -1,0 +1,15 @@
+README.md
+pyproject.toml
+mdi/__init__.py
+mdi/__main__.py
+mdi/cache.py
+mdi/cli.py
+mdi/config.py
+mdi/indexer.py
+mdi/parser.py
+mdi.egg-info/PKG-INFO
+mdi.egg-info/SOURCES.txt
+mdi.egg-info/dependency_links.txt
+mdi.egg-info/entry_points.txt
+mdi.egg-info/requires.txt
+mdi.egg-info/top_level.txt

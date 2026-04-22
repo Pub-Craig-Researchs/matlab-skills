@@ -1,0 +1,3 @@
+display_name: "MATLAB Help Query"
+short_description: "Query MATLAB function documentation using CLI help command"
+default_prompt: "Look up the documentation for this MATLAB function"
